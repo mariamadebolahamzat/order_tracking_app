@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:order_tracking_app/src/presentation/auth/auth.dart';
+import 'package:order_tracking_app/src/presentation/order/pages/order_details.dart';
 import 'package:order_tracking_app/src/presentation/splash.dart';
 
 class AppRouter {
@@ -13,6 +14,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SplashView());
       case AuthView.route:
         return MaterialPageRoute(builder: (_) => const AuthView());
+      case OrderDetails.route:
+        return MaterialPageRoute(builder: (_) => const OrderDetails());
 
       default:
         return MaterialPageRoute(

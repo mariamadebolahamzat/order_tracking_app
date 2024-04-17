@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:order_tracking_app/src/shared/components/buttons.dart';
+import 'package:order_tracking_app/src/presentation/auth/auth_button.dart';
+import 'package:order_tracking_app/src/shared/constants/assets_extension.dart';
 
 class AuthView extends StatelessWidget {
   static const route = '/auth-view';
@@ -29,7 +30,7 @@ class AuthView extends StatelessWidget {
             right: 50,
             bottom: 100,
             child: Image.asset(
-              "assets/images/food.png",
+              'food'.png,
               width: 50,
               height: 50,
             ),
@@ -53,19 +54,21 @@ class AuthView extends StatelessWidget {
                           .headlineMedium
                           ?.copyWith(color: Colors.orange[300], fontWeight: FontWeight.bold)),
                   40.verticalSpace,
-                  PrimaryButton(
+                  AuthButton(
                     onTap: () {},
-                    label: 'Sign in with Google',
+                    buttonText: 'Sign in with Google',
+                    image: 'google_logo'.svg,
                   ),
                   20.verticalSpace,
-                  PrimaryButton(
+                  AuthButton(
                     onTap: () {},
-                    label: 'Sign in with GitHub',
+                    buttonText: 'Sign in with GitHub',
+                    image: 'github_logo'.svg,
                   ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

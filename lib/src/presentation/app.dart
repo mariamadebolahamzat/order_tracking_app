@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:order_tracking_app/src/presentation/splash.dart';
+import 'package:order_tracking_app/src/presentation/order/pages/order_details.dart';
 import 'package:order_tracking_app/src/shared/constants/app_theme.dart';
 import 'package:order_tracking_app/src/shared/router/app_router.dart';
 
@@ -22,7 +22,7 @@ class App extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           navigatorKey: AppRouter.navKey,
           onGenerateRoute: _appRouter.generateRoutes,
-          initialRoute: SplashView.route,
+          initialRoute: OrderDetails.route,
           theme: AppTheme(context).lightTheme,
           darkTheme: AppTheme(context).darkTheme,
         ),

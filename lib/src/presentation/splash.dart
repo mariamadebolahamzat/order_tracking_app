@@ -63,11 +63,13 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                       child: child,
                     );
                   },
-                  child: Text('ORTA',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineLarge
-                          ?.copyWith(color: Colors.orange[300], fontStyle: FontStyle.italic)),
+                  child: Text(
+                    'ORTA',
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                        color: Colors.orange[300],
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic),
+                  ),
                 ),
                 AnimatedBuilder(
                   animation: _textAnimation,
@@ -77,11 +79,13 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                       child: child,
                     );
                   },
-                  child: Text('Order Tracking App',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineLarge
-                          ?.copyWith(color: Colors.orange[300], fontStyle: FontStyle.italic)),
+                  child: Text(
+                    'Order Tracking App',
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                        color: Colors.orange[300],
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic),
+                  ),
                 ),
               ],
             ),
