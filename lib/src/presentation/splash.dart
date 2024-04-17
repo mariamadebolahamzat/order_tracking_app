@@ -67,7 +67,7 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                       style: Theme.of(context)
                           .textTheme
                           .headlineLarge
-                          ?.copyWith(color: Colors.yellow, fontStyle: FontStyle.italic)),
+                          ?.copyWith(color: Colors.orange[300], fontStyle: FontStyle.italic)),
                 ),
                 AnimatedBuilder(
                   animation: _textAnimation,
@@ -81,7 +81,7 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                       style: Theme.of(context)
                           .textTheme
                           .headlineLarge
-                          ?.copyWith(color: Colors.yellow, fontStyle: FontStyle.italic)),
+                          ?.copyWith(color: Colors.orange[300], fontStyle: FontStyle.italic)),
                 ),
               ],
             ),

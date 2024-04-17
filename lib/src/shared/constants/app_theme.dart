@@ -61,7 +61,7 @@ class AppTheme {
 
   ColorScheme get _lightColorScheme => ColorScheme.fromSwatch().copyWith(
         primary: Colors.pink,
-        secondary: Colors.yellow,
+        secondary: Colors.orange[300],
         surface: Colors.grey,
         onSurface: Colors.white,
         onSurfaceVariant: Colors.grey[400],
@@ -71,7 +71,7 @@ class AppTheme {
 
   ColorScheme get _darkColorScheme => ColorScheme.fromSwatch().copyWith(
         primary: Colors.pink,
-        secondary: Colors.yellow,
+        secondary: Colors.orange[300],
         surface: Colors.grey,
         onSurface: Colors.white,
         onSurfaceVariant: Colors.grey[400],
