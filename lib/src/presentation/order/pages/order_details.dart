@@ -35,6 +35,7 @@ class _OrderDetailsState extends ConsumerState<OrderDetails> {
   @override
   Widget build(BuildContext context) {
     final order = ref.watch(orderNotifier.notifier).order;
+    ref.watch(orderNotifier);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
