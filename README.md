@@ -1,16 +1,10 @@
 # order_tracking_app
 
-A new Flutter project.
+An app that allows you to track your order from a restaurant.
 
-## Getting Started
+## About Codebase
 
-This project is a starting point for a Flutter application.
+## APK file
 
-A few resources to get you started if this is your first Flutter project:
+https://drive.google.com/file/d/1m0MMmmEfLOjeYvUKSy1GbCsZkjS95OFC/view?usp=sharing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
