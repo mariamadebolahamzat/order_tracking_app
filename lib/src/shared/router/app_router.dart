@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:order_tracking_app/src/presentation/auth/auth.dart';
 import 'package:order_tracking_app/src/presentation/order/pages/order_details.dart';
@@ -15,7 +16,23 @@ class AppRouter {
       case AuthView.route:
         return MaterialPageRoute(builder: (_) => const AuthView());
       case OrderDetails.route:
-        return MaterialPageRoute(builder: (_) => const OrderDetails());
+        final user = FirebaseAuth.instance.currentUser;
+        if (user != null) {
+          return MaterialPageRoute(
+            builder: (_) => OrderDetails(user: user),
+          );
+        } else {
+          return MaterialPageRoute(
+            builder: (_) => const Scaffold(
+              body: Center(
+                child: Text(
+                  'No user logged in',
+                  style: TextStyle(color: Colors.red),
+                ),
+              ),
+            ),
+          );
+        }
 
       default:
         return MaterialPageRoute(

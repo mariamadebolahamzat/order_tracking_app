@@ -12,7 +12,20 @@
           "package_name": "com.example.order_tracking_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "728416083842-idailsb4sq1sfsdpaej1k1l58go58gcl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.order_tracking_app",
+            "certificate_hash": "cb84b9ce9f098d64f432c32b00783b1d5dfd6c28"
+          }
+        },
+        {
+          "client_id": "728416083842-p81i71usfaig2g1t90f5f3bndof82aaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCQGZKGBPU0iRDGdkNvbfU1KfFa5iGbXt8"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728416083842-p81i71usfaig2g1t90f5f3bndof82aaj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "728416083842-f40fc9bmh62tcdlvu95gvqj04t21ih26.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.orderTrackingApp"
+              }
+            }
+          ]
         }
       }
     }
