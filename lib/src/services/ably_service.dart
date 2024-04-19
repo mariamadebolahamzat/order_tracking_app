@@ -2,10 +2,11 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:ably_flutter/ably_flutter.dart';
+import 'package:order_tracking_app/src/services/i_ably_service.dart';
 
 import '../domain/order/enums/status_enum.dart';
 
-class AblyService {
+class AblyService extends IAblyService {
   static const _ablyKey = "LI0M6g.pCKuHQ:m0gtA-K6ibSwZTKQsCjTyi3Fc9A9DolUCuqQEqpI2gk";
   static const _channelName = 'order-tracker';
   static const _eventName = 'order-status';
@@ -14,8 +15,11 @@ class AblyService {
   Realtime realtime = Realtime(options: clientOptions);
   RealtimeChannel? channel;
 
-  StreamController<StatusEnum> orderSC = StreamController<StatusEnum>.broadcast();
+  final StreamController<StatusEnum> _orderSC = StreamController<StatusEnum>.broadcast();
+  @override
+  StreamController<StatusEnum> get orderSC => _orderSC;
 
+  @override
   void initListeners() {
     realtime.connection
         .on(ConnectionEvent.connected)
@@ -47,6 +51,7 @@ class AblyService {
     });
   }
 
+  @override
   void dispose() async {
     await channel?.detach();
     await realtime.connection.close();

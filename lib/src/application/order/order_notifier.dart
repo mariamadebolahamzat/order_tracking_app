@@ -3,9 +3,12 @@ import 'package:order_tracking_app/src/domain/order/enums/status_enum.dart';
 import 'package:order_tracking_app/src/services/ably_service.dart';
 
 import '../../domain/order/dtos/order_detail.dart';
+import '../../services/i_ably_service.dart';
 
 class OrderNotifier extends AutoDisposeStreamNotifier<StatusEnum> {
-  final AblyService ablyService = AblyService();
+  final IAblyService ablyService;
+
+  OrderNotifier(this.ablyService);
 
   final order = OrderDetail(
     id: '4563890',
@@ -31,5 +34,5 @@ class OrderNotifier extends AutoDisposeStreamNotifier<StatusEnum> {
 }
 
 final orderNotifier = StreamNotifierProvider.autoDispose<OrderNotifier, StatusEnum>(
-  () => OrderNotifier(),
+  () => OrderNotifier(AblyService()),
 );

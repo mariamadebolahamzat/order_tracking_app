@@ -45,8 +45,6 @@ dependencies:
   firebase_core: ^2.30.0
   timelines: ^0.1.0
   firebase_auth: ^4.19.2
-  url_launcher: ^6.2.6
-  http: ^1.2.1
   ably_flutter: ^1.2.30
   intl: ^0.19.0
 
@@ -64,24 +62,6 @@ flutter:
     - assets/
     - assets/images/
     - assets/icons/
-
-  fonts:
-    - family: Karla
-      fonts:
-        - asset: assets/fonts/karla/Karla-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/karla/Karla-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/karla/Karla-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/karla/Karla-Light.ttf
-          weight: 300
-        - asset: assets/fonts/karla/Karla-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/karla/Karla-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/karla/Karla-SemiBold.ttf
-          weight: 600
 
 
 
