@@ -76,15 +76,6 @@ class AuthView extends ConsumerWidget {
                       buttonText: 'Sign in with Google',
                       image: 'google_logo'.svg,
                     ),
-                    20.verticalSpace,
-                    AuthButton(
-                      onTap: () {
-                        final authNotifier = ref.read(authStateNotifierProvider.notifier);
-                        authNotifier.checkDeepLink(Uri.base.toString());
-                      },
-                      buttonText: 'Sign in with GitHub',
-                      image: 'github_logo'.svg,
-                    ),
                   ],
                 ),
               ),

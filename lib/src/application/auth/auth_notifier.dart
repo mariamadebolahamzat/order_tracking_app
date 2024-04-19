@@ -8,30 +8,12 @@ import 'package:order_tracking_app/src/domain/auth/repository/auth_repository_in
 class AuthStateNotifier extends StateNotifier<AuthUiState> {
   final AuthRepositoryInterface _authRepo;
 
-  AuthStateNotifier(this._authRepo) : super(AuthUiState.initial());
+  AuthStateNotifier(this._authRepo) : super(const AuthUiState.initial());
 
   Future<void> continueWithGoogleLoginOnTap() async {
     await launch(state.ref, (model) async {
       state = model.emit(state.copyWith(currentState: ViewState.loading));
       final result = await _authRepo.signInWithGoogle();
-      state = result.fold(
-        (left) => model.emit(state.copyWith(currentState: ViewState.error, error: left)),
-        (right) => model.emit(state.copyWith(currentState: ViewState.success)),
-      );
-    });
-  }
-
-  void checkDeepLink(String link) {
-    if (link.isNotEmpty) {
-      handleGitHubLogin(link);
-    }
-  }
-
-  Future<void> handleGitHubLogin(String link) async {
-    await launch(state.ref, (model) async {
-      state = model.emit(state.copyWith(currentState: ViewState.loading));
-      String code = link.substring(link.indexOf(RegExp('code=')) + 5);
-      final result = await _authRepo.signInWithGitHub(code);
       state = result.fold(
         (left) => model.emit(state.copyWith(currentState: ViewState.error, error: left)),
         (right) => model.emit(state.copyWith(currentState: ViewState.success)),

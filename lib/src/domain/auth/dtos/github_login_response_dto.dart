@@ -1,11 +1,12 @@
 import 'package:equatable/equatable.dart';
 
 class GitHubLoginResponse extends Equatable {
-  String accessToken;
-  String tokenType;
-  String scope;
+  final String accessToken;
+  final String tokenType;
+  final String scope;
 
-  GitHubLoginResponse({required this.accessToken, required this.tokenType, required this.scope});
+  const GitHubLoginResponse(
+      {required this.accessToken, required this.tokenType, required this.scope});
 
   factory GitHubLoginResponse.fromJson(Map<String, dynamic> json) => GitHubLoginResponse(
         accessToken: json["access_token"],

@@ -1,11 +1,12 @@
 import 'package:equatable/equatable.dart';
 
 class GitHubLoginRequest extends Equatable {
-  String clientId;
-  String clientSecret;
-  String code;
+  final String clientId;
+  final String clientSecret;
+  final String code;
 
-  GitHubLoginRequest({required this.clientId, required this.clientSecret, required this.code});
+  const GitHubLoginRequest(
+      {required this.clientId, required this.clientSecret, required this.code});
 
   Map<String, dynamic> toJson() => {
         "client_id": clientId,

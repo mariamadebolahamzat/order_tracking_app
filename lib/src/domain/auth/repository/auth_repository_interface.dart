@@ -6,7 +6,6 @@ import 'package:order_tracking_app/src/infrastructure/auth/repository/auth_repo_
 
 abstract interface class AuthRepositoryInterface {
   Future<Either<AppException, User>> signInWithGoogle();
-  Future<Either<AppException, User>> signInWithGitHub(String code);
 }
 
 final authRepositoryProvider = Provider.autoDispose<AuthRepositoryInterface>((ref) {

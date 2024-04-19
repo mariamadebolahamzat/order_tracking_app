@@ -25,7 +25,7 @@ class AppTheme {
             color: Colors.black,
           ),
         ),
-        textTheme: GoogleFonts.karlaTextTheme(_textTheme),
+        textTheme: GoogleFonts.robotoTextTheme(_textTheme),
       );
 
   ThemeData get darkTheme => ThemeData(
@@ -45,7 +45,7 @@ class AppTheme {
             color: Colors.black,
           ),
         ),
-        textTheme: GoogleFonts.karlaTextTheme(_textTheme),
+        textTheme: GoogleFonts.robotoTextTheme(_textTheme),
       );
 
   TextTheme get _textTheme => Theme.of(context).textTheme.copyWith(
