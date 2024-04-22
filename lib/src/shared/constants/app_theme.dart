@@ -60,8 +60,8 @@ class AppTheme {
       );
 
   ColorScheme get _lightColorScheme => ColorScheme.fromSwatch().copyWith(
-        primary: Colors.pink,
-        secondary: Colors.orange[300],
+        primary: Colors.green,
+        secondary: Colors.green[300],
         surface: Colors.grey,
         onSurface: Colors.white,
         onSurfaceVariant: Colors.grey[400],
@@ -70,8 +70,8 @@ class AppTheme {
       );
 
   ColorScheme get _darkColorScheme => ColorScheme.fromSwatch().copyWith(
-        primary: Colors.pink,
-        secondary: Colors.orange[300],
+        primary: Colors.green,
+        secondary: Colors.green[300],
         surface: Colors.grey,
         onSurface: Colors.white,
         onSurfaceVariant: Colors.grey[400],

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:order_tracking_app/src/domain/order/enums/status_enum.dart';
 import 'package:timelines/timelines.dart';
 
 import '../../../application/order/order_notifier.dart';
 
-class OrderTrackingBottomSheet extends ConsumerWidget {
-  const OrderTrackingBottomSheet({super.key});
+class OrderTrackingPage extends ConsumerWidget {
+  static const route = '/order-tracking';
+  const OrderTrackingPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -52,62 +52,59 @@ class OrderTrackingBottomSheet extends ConsumerWidget {
         time: '2:29pm',
       ),
     ];
-    return Container(
-      constraints: BoxConstraints(
-        maxHeight: 0.7.sh,
-      ),
-      padding: const EdgeInsets.all(16.0),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20.0),
-          topRight: Radius.circular(20.0),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: true,
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(Icons.arrow_back),
         ),
+        title: Text('Order #${order.id} Timeline',
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall
+                ?.copyWith(color: Colors.black, fontWeight: FontWeight.bold)),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Center(
-            child: Text(
-              'Order #${order.id} Timeline',
-              style: theme.headlineSmall?.copyWith(
-                color: Colors.black,
-              ),
-            ),
-          ),
-          const SizedBox(height: 16.0),
-          Flexible(
-            child: Timeline.tileBuilder(
-              shrinkWrap: true,
-              builder: TimelineTileBuilder.connectedFromStyle(
-                itemCount: trackingSteps.length,
-                connectorStyleBuilder: (context, index) => ConnectorStyle.solidLine,
-                indicatorStyleBuilder: (context, index) {
-                  if (status.index >= trackingSteps[index].status.index) {
-                    return IndicatorStyle.dot;
-                  }
-                  return IndicatorStyle.outlined;
-                },
-                contentsBuilder: (context, index) {
-                  return TrackItemWidget(step: trackingSteps[index]);
-                },
-              ),
-              theme: TimelineThemeData(
-                nodePosition: 0.04,
-                indicatorTheme: const IndicatorThemeData(
-                  position: 0.3,
-                  size: 20.0,
-                  color: Colors.black,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Timeline.tileBuilder(
+                shrinkWrap: true,
+                builder: TimelineTileBuilder.connectedFromStyle(
+                  itemCount: trackingSteps.length,
+                  connectorStyleBuilder: (context, index) => ConnectorStyle.solidLine,
+                  indicatorStyleBuilder: (context, index) {
+                    if (status.index >= trackingSteps[index].status.index) {
+                      return IndicatorStyle.dot;
+                    }
+                    return IndicatorStyle.outlined;
+                  },
+                  contentsBuilder: (context, index) {
+                    return TrackItemWidget(step: trackingSteps[index]);
+                  },
                 ),
-                connectorTheme: const ConnectorThemeData(
-                  thickness: 2.5,
-                  color: Colors.orange,
+                theme: TimelineThemeData(
+                  nodePosition: 0.04,
+                  indicatorTheme: const IndicatorThemeData(
+                    position: 0.3,
+                    size: 20.0,
+                    color: Colors.black,
+                  ),
+                  connectorTheme: const ConnectorThemeData(
+                    thickness: 2.5,
+                    color: Colors.green,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -138,7 +135,7 @@ class TrackItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 24),
       child: Row(
         children: [
           Expanded(

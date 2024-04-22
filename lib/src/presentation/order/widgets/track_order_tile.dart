@@ -5,7 +5,7 @@ import 'package:order_tracking_app/src/domain/order/enums/status_enum.dart';
 import 'package:order_tracking_app/src/shared/constants/sizing_extension.dart';
 
 import '../../../application/order/order_notifier.dart';
-import 'order_tracking_bottomsheet.dart';
+import 'order_tracking_page.dart';
 
 class TrackOrderTile extends ConsumerWidget {
   const TrackOrderTile({super.key});
@@ -41,7 +41,7 @@ class TrackOrderTile extends ConsumerWidget {
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 2),
                   height: 4,
-                  color: status.index >= e.index ? Colors.orange.shade400 : Colors.grey.shade200,
+                  color: status.index >= e.index ? Colors.green.shade400 : Colors.grey.shade200,
                 ),
               );
             }).toList(),
@@ -49,17 +49,12 @@ class TrackOrderTile extends ConsumerWidget {
           20.verticalSpace,
           InkWell(
             onTap: () {
-              showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  builder: (BuildContext context) {
-                    return const OrderTrackingBottomSheet();
-                  });
+              Navigator.pushNamed(context, OrderTrackingPage.route);
             },
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.orange.shade200,
+                color: Colors.green.shade200,
                 borderRadius: BorderRadius.circular(16.rsp),
               ),
               child: Row(

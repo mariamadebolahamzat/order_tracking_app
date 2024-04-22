@@ -47,7 +47,7 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.green,
       body: Stack(
         children: [
           Align(
@@ -66,7 +66,7 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                   child: Text(
                     'ORTA',
                     style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                        color: Colors.orange[300],
+                        color: Colors.white,
                         fontWeight: FontWeight.w700,
                         fontStyle: FontStyle.italic),
                   ),
@@ -82,7 +82,7 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                   child: Text(
                     'Order Tracking App',
                     style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                        color: Colors.orange[300],
+                        color: Colors.white,
                         fontWeight: FontWeight.w700,
                         fontStyle: FontStyle.italic),
                   ),

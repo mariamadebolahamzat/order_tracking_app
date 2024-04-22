@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:order_tracking_app/src/presentation/auth/auth.dart';
 import 'package:order_tracking_app/src/presentation/order/pages/order_details.dart';
+import 'package:order_tracking_app/src/presentation/order/widgets/order_tracking_page.dart';
 import 'package:order_tracking_app/src/presentation/splash.dart';
 
 class AppRouter {
@@ -15,6 +16,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SplashView());
       case AuthView.route:
         return MaterialPageRoute(builder: (_) => const AuthView());
+      case OrderTrackingPage.route:
+        return MaterialPageRoute(builder: (_) => const OrderTrackingPage());
       case OrderDetails.route:
         final user = FirebaseAuth.instance.currentUser;
         if (user != null) {

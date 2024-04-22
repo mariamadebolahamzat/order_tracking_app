@@ -19,7 +19,7 @@ class OrderListTile extends StatelessWidget {
             height: 60,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.rsp),
-              color: Colors.orange[300],
+              color: Colors.green[300],
               image: const DecorationImage(
                 image: NetworkImage(AppAssets.foodImage),
                 fit: BoxFit.cover,

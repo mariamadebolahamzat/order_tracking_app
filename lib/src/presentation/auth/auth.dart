@@ -26,7 +26,7 @@ class AuthView extends ConsumerWidget {
     return AbsorbPointer(
       absorbing: isLoading,
       child: Scaffold(
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.green,
         body: Stack(
           children: [
             ClipPath(
@@ -36,7 +36,7 @@ class AuthView extends ConsumerWidget {
                 width: double.infinity,
                 padding: EdgeInsets.zero,
                 margin: EdgeInsets.zero,
-                color: Colors.orange[300],
+                color: Colors.white,
                 height: MediaQuery.of(context).size.height * 0.85,
               ),
             ),
@@ -68,7 +68,7 @@ class AuthView extends ConsumerWidget {
                         style: Theme.of(context)
                             .textTheme
                             .headlineMedium
-                            ?.copyWith(color: Colors.orange[300], fontWeight: FontWeight.bold)),
+                            ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
                     40.verticalSpace,
                     AuthButton(
                       onTap:
