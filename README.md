@@ -2,11 +2,14 @@
 
 This Flutter application is a simple order-tracking app that allows users to sign in with Google using Firebase Authentication. Once signed in, users can view their order details, including order ID, date, items, quantity, price, and real-time order status. The app provides a seamless experience for users to switch between the order overview page and the detailed order status page.
 
+
 ## About Codebase
 The codebase prioritizes maintainability and reusability. It leverages Riverpod for state management, promoting clean separation of concerns. The architecture follows a Domain-Driven Design (DDD) approach, further enhancing code organization. This structure separates the Presentation layer (user interface) from the domain and business logic layers.
 
+
 ## Tools used
 - Flutter
+
 
 ## External Technology
 - Firebase Authentication: Provides user authentication using Google login.
@@ -18,11 +21,15 @@ The codebase prioritizes maintainability and reusability. It leverages Riverpod 
 - Intl: used for date and time formatting 
 - Flutter Screenutil: used for responsive UI
 
+
 ## APK file
 
 https://drive.google.com/file/d/1m0MMmmEfLOjeYvUKSy1GbCsZkjS95OFC/view?usp=drive_link
 
+
 ## DEMO VIDEO
+
+https://drive.google.com/file/d/1UA9viVYMQIrKKrs7tgOr-j4j2ZMuilWU/view?usp=sharing
 
 
 ## How to run the app
